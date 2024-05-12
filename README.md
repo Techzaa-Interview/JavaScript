@@ -32,11 +32,7 @@
 
 **Answer:** Synchronous code is executed sequentially, blocking further execution until the current operation is completed. Asynchronous code allows the program to continue executing other operations while waiting for the asynchronous operation to complete, using callbacks, promises, or async/await.
 
----
-
-**# Question 7: How does event delegation work in JavaScript?
+**Question 7: How does event delegation work in JavaScript?**
 
 **Answer:** Event delegation is a technique where a single event listener is attached to a parent element, rather than multiple event listeners being attached to individual child elements. This allows you to manage events on dynamically added elements or reduce the number of event listeners needed.
-
----
 
