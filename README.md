@@ -432,5 +432,408 @@ Certainly! Let's continue with more interview questions focusing on JavaScript:
      counter.increment(); // Output: 1
      ```
 
-10. How do you inherit from multiple classes in JavaScript?
-    - **Answer:** JavaScript does not support multiple inheritance directly. You can use mixins or composition to achieve similar results.
+6. What is the purpose of the `super` keyword in JavaScript classes?
+   - **Answer:** The `super` keyword is used to call the constructor or methods of a parent class.
+   - **Example:**
+     ```javascript
+     class Animal {
+       constructor(name) {
+         this.name = name;
+       }
+
+       speak() {
+         console.log(`${this.name} makes a noise.`);
+       }
+     }
+
+     class Dog extends Animal {
+       constructor(name, breed) {
+         super(name);
+         this.breed = breed;
+       }
+
+       speak() {
+         super.speak();
+         console.log(`${this.name} barks.`);
+       }
+     }
+
+     let dog = new Dog('Rex', 'German Shepherd');
+     dog.speak(); // Output: Rex makes a noise. Rex barks.
+     ```
+
+7. Can you explain the difference between `public`, `protected`, and `private` fields in JavaScript classes?
+   - **Answer:** JavaScript currently supports public and private fields. Public fields are accessible from outside the class, while private fields (prefixed with `#`) are only accessible within the class.
+   - **Example:**
+     ```javascript
+     class Car {
+       #mileage = 0; // Private field
+
+       constructor(brand) {
+         this.brand = brand; // Public field
+       }
+
+       drive(distance) {
+         this.#mileage += distance;
+       }
+
+       getMileage() {
+         return this.#mileage;
+       }
+     }
+
+     let myCar = new Car('Toyota');
+     myCar.drive(100);
+     console.log(myCar.getMileage()); // Output: 100
+     console.log(myCar.#mileage); // SyntaxError: Private field '#mileage' must be declared in an enclosing class
+     ```
+
+## Scope and Closures
+1. What is the difference between `var`, `let`, and `const` in terms of scope?
+   - **Answer:** `var` is function-scoped, while `let` and `const` are block-scoped. `const` also indicates that the variable cannot be reassigned.
+   - **Example:**
+     ```javascript
+     function example() {
+       if (true) {
+         var x = 10; // function-scoped
+         let y = 20; // block-scoped
+         const z = 30; // block-scoped
+       }
+       console.log(x); // Output: 10
+       console.log(y); // ReferenceError: y is not defined
+       console.log(z); // ReferenceError: z is not defined
+     }
+     example();
+     ```
+
+2. Can you explain the concept of closure in JavaScript?
+   - **Answer:** A closure is a function that has access to its own scope, the scope of the outer function, and the global scope.
+   - **Example:**
+     ```javascript
+     function outerFunction(outerVariable) {
+       return function innerFunction(innerVariable) {
+         console.log('Outer Variable:', outerVariable);
+         console.log('Inner Variable:', innerVariable);
+       };
+     }
+
+     const newFunction = outerFunction('outside');
+     newFunction('inside'); // Output: Outer Variable: outside, Inner Variable: inside
+     ```
+
+3. How can closures be used to create private variables?
+   - **Answer:** Closures can be used to create private variables by encapsulating the variables within a function scope.
+   - **Example:**
+     ```javascript
+     function createCounter() {
+       let count = 0; // Private variable
+
+       return {
+         increment: function() {
+           count++;
+           return count;
+         },
+         decrement: function() {
+           count--;
+           return count;
+         },
+         getCount: function() {
+           return count;
+         }
+       };
+     }
+
+     const counter = createCounter();
+     console.log(counter.increment()); // Output: 1
+     console.log(counter.decrement()); // Output: 0
+     console.log(counter.getCount()); // Output: 0
+     console.log(counter.count); // Output: undefined
+     ```
+
+4. What is the temporal dead zone in JavaScript?
+   - **Answer:** The temporal dead zone (TDZ) refers to the period between entering a scope and the point where a variable is declared. During this period, accessing the variable will result in a `ReferenceError`.
+   - **Example:**
+     ```javascript
+     {
+       // TDZ for `a`
+       console.log(a); // ReferenceError: Cannot access 'a' before initialization
+       let a = 3; // `a` is declared
+     }
+     ```
+
+5. How do you create a module in JavaScript using closures?
+   - **Answer:** You can create a module using an IIFE (Immediately Invoked Function Expression) that returns an object containing methods.
+   - **Example:**
+     ```javascript
+     const module = (function() {
+       let privateVar = 'I am private';
+
+       function privateMethod() {
+         console.log(privateVar);
+       }
+
+       return {
+         publicMethod: function() {
+           privateMethod();
+         }
+       };
+     })();
+
+     module.publicMethod(); // Output: I am private
+     console.log(module.privateVar); // Output: undefined
+     ```
+
+## DOM Manipulation
+1. How do you select an HTML element by its ID in JavaScript?
+   - **Answer:** You can select an HTML element by its ID using the `document.getElementById()` method.
+   - **Example:**
+     ```javascript
+     let element = document.getElementById('myElement');
+     ```
+
+2. How do you add a class to an HTML element in JavaScript?
+   - **Answer:** You can add a class to an HTML element using the `classList.add()` method.
+   - **Example:**
+     ```javascript
+     let element = document.getElementById('myElement');
+     element.classList.add('newClass');
+     ```
+
+3. How do you create a new HTML element in JavaScript?
+   - **Answer:** You can create a new HTML element using the `document.createElement()` method.
+   - **Example:**
+     ```javascript
+     let newElement = document.createElement('div');
+     newElement.textContent = 'Hello, World!';
+     document.body.appendChild(newElement);
+     ```
+
+4. How do you remove an HTML element from the DOM in JavaScript?
+   - **Answer:** You can remove an HTML element from the DOM using the `removeChild()` method.
+   - **Example:**
+     ```javascript
+     let parentElement = document.getElementById('parent');
+     let childElement = document.getElementById('child');
+     parentElement.removeChild(childElement);
+     ```
+
+5. How do you add an event listener to an HTML element in JavaScript?
+   - **Answer:** You can add an event listener to an HTML element using the `addEventListener()` method.
+   - **Example:**
+     ```javascript
+     let button = document.getElementById('myButton');
+     button.addEventListener('click', function() {
+       alert('Button clicked!');
+     });
+     ```
+
+6. How do you get the value of an input field in JavaScript?
+   - **Answer:** You can get the value of an input field using the `value` property.
+   - **Example:**
+     ```javascript
+     let input = document.getElementById('myInput');
+     let value = input.value;
+     console.log(value);
+     ```
+
+7. How do you set the value of an input field in JavaScript?
+   - **Answer:** You can set the value of an input field using the `value` property.
+   - **Example:**
+     ```javascript
+     let input = document.getElementById('myInput');
+     input.value = 'New Value';
+     ```
+
+8. How do you change the content of an HTML element in JavaScript?
+   - **Answer:** You can change the content of an HTML element using the `innerHTML` or `textContent` property.
+   - **Example:**
+     ```javascript
+     let element = document.getElementById('myElement');
+     element.innerHTML = '<p>New Content</p>';
+     // or
+     element.textContent = 'New Content';
+     ```
+
+9. How do you toggle a class on an HTML element in JavaScript?
+   - **Answer:** You can toggle a class on an HTML element using the `classList.toggle()` method.
+   - **Example:**
+     ```javascript
+     let element = document.getElementById('myElement');
+     element.classList.toggle('active');
+     ```
+
+10. How do you prevent the default action of an event in JavaScript?
+    - **Answer:** You can prevent the default action of an event using the `preventDefault()` method.
+    - **Example:**
+      ```javascript
+      let link = document.getElementById('myLink');
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        console.log('Default action prevented.');
+      });
+      ```
+
+## Asynchronous Programming
+1. What is a promise in JavaScript?
+   - **Answer:** A promise is an object representing the eventual completion or failure of an asynchronous operation.
+   - **Example:**
+     ```javascript
+     let promise = new Promise(function(resolve, reject) {
+       // Asynchronous operation
+       if (success) {
+         resolve(result);
+       } else {
+         reject(error);
+       }
+     });
+
+     promise.then(function(result) {
+       console.log(result);
+     }).catch(function(error) {
+       console.error(error);
+     });
+     ```
+
+2. How do you create and use async/await in JavaScript?
+   - **Answer:** You can create an async function using the `async` keyword and use `await` to wait for a promise to resolve.
+  
+
+ - **Example:**
+     ```javascript
+     async function fetchData() {
+       try {
+         let response = await fetch('https://api.example.com/data');
+         let data = await response.json();
+         console.log(data);
+       } catch (error) {
+         console.error(error);
+       }
+     }
+
+     fetchData();
+     ```
+
+3. How do you handle multiple promises concurrently in JavaScript?
+   - **Answer:** You can handle multiple promises concurrently using `Promise.all()`.
+   - **Example:**
+     ```javascript
+     let promise1 = fetch('https://api.example.com/data1');
+     let promise2 = fetch('https://api.example.com/data2');
+
+     Promise.all([promise1, promise2])
+       .then(function(results) {
+         return Promise.all(results.map(result => result.json()));
+       })
+       .then(function(data) {
+         console.log(data);
+       })
+       .catch(function(error) {
+         console.error(error);
+       });
+     ```
+
+4. What is the purpose of the `finally` method in promises?
+   - **Answer:** The `finally` method is used to execute code regardless of the promise's outcome (resolved or rejected).
+   - **Example:**
+     ```javascript
+     let promise = fetch('https://api.example.com/data');
+
+     promise.then(function(response) {
+       return response.json();
+     }).catch(function(error) {
+       console.error(error);
+     }).finally(function() {
+       console.log('Promise settled');
+     });
+     ```
+
+5. How do you create a promise that resolves after a specified delay?
+   - **Answer:** You can create a promise that resolves after a delay using `setTimeout`.
+   - **Example:**
+     ```javascript
+     function delay(ms) {
+       return new Promise(function(resolve) {
+         setTimeout(resolve, ms);
+       });
+     }
+
+     delay(2000).then(function() {
+       console.log('Resolved after 2 seconds');
+     });
+     ```
+
+6. What is the difference between `Promise.all` and `Promise.race`?
+   - **Answer:** `Promise.all` waits for all promises to resolve or any to reject, while `Promise.race` resolves or rejects as soon as one promise resolves or rejects.
+   - **Example:**
+     ```javascript
+     let promise1 = new Promise((resolve) => setTimeout(resolve, 100, 'first'));
+     let promise2 = new Promise((resolve) => setTimeout(resolve, 200, 'second'));
+
+     Promise.all([promise1, promise2]).then(console.log); // Output: ['first', 'second']
+     Promise.race([promise1, promise2]).then(console.log); // Output: 'first'
+     ```
+
+7. How do you handle errors in asynchronous code using async/await?
+   - **Answer:** You can handle errors in async functions using `try...catch`.
+   - **Example:**
+     ```javascript
+     async function fetchData() {
+       try {
+         let response = await fetch('https://api.example.com/data');
+         let data = await response.json();
+         console.log(data);
+       } catch (error) {
+         console.error('Error:', error);
+       }
+     }
+
+     fetchData();
+     ```
+
+8. How do you create a promise that rejects after a specified delay?
+   - **Answer:** You can create a promise that rejects after a delay using `setTimeout`.
+   - **Example:**
+     ```javascript
+     function delayReject(ms) {
+       return new Promise(function(resolve, reject) {
+         setTimeout(reject, ms, 'Rejected after delay');
+       });
+     }
+
+     delayReject(2000).catch(function(reason) {
+       console.error(reason);
+     });
+     ```
+
+9. How do you use the `await` operator with non-promise values?
+   - **Answer:** The `await` operator can be used with any value, and it will simply return that value if it is not a promise.
+   - **Example:**
+     ```javascript
+     async function example() {
+       let value = await 42;
+       console.log(value); // Output: 42
+     }
+
+     example();
+     ```
+
+10. How do you handle promise rejection in JavaScript?
+    - **Answer:** You can handle promise rejection using the `catch` method or by passing a second callback to the `then` method.
+    - **Example:**
+      ```javascript
+      let promise = new Promise(function(resolve, reject) {
+        reject('Error occurred');
+      });
+
+      promise.catch(function(error) {
+        console.error(error);
+      });
+
+      // Or
+
+      promise.then(null, function(error) {
+        console.error(error);
+      });
+      ```
+
+
