@@ -1,6 +1,6 @@
-# JavaScript Interview Questions
+# JavaScript Interview Questions and Answers <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript Logo" width="50"/>
 
-![JavaScript](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png)
+Welcome to our JavaScript interview questions guide! Whether you're preparing for an interview or just looking to deepen your understanding, these questions will help you master JavaScript concepts. Let's dive in!
 
 **Question 1: What is the difference between `null` and `undefined` in JavaScript?**
 
@@ -50,5 +50,30 @@
 
 **Answer:** Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase. This means you can use variables and functions before they are declared in the code. However, only the declarations are hoisted, not the initializations.
 
-**Conclusion**
-Get the top interview questions for better interview for your placement journey.
+**Question 13: What are the differences between `let`, `const`, and `var` in JavaScript?**
+
+**Answer:** `var` is function-scoped and can be redeclared and reassigned. `let` is block-scoped, can be reassigned but not redeclared in the same scope, and is not hoisted. `const` is block-scoped, cannot be reassigned or redeclared, and must be initialized at declaration.
+
+**Question 14: How does asynchronous programming help in improving the performance of web applications?**
+
+**Answer:** Asynchronous programming allows web applications to perform non-blocking operations, which means the application can continue to respond to user interactions while waiting for data from external sources. This improves the overall responsiveness and performance of the application.
+
+**Question 15: What is the difference between `call`, `apply`, and `bind` methods in JavaScript?**
+
+**Answer:** `call` and `apply` are used to invoke a function with a specified `this` context and arguments. The difference is in how arguments are passed: `call` accepts arguments as a list, while `apply` accepts arguments as an array. `bind` is used to create a new function with a specified `this` context, which can be invoked later.
+
+**Question 16: Explain the concept of event bubbling and event capturing in JavaScript.**
+
+**Answer:** Event bubbling is a propagation mechanism in which an event is first captured and handled by the innermost element and then propagated to outer elements. Event capturing is the opposite, where the event is first captured by the outermost element and then propagated to inner elements. Both mechanisms are part of the event propagation phase in the DOM event handling process.
+
+**Question 17: How do you check the data type of a variable in JavaScript?**
+
+**Answer:** You can use the `typeof` operator to check the data type of a variable. It returns a string indicating the data type of the variable.
+
+**Question 18: Explain the difference between `==` and `===` in JavaScript.**
+
+**Answer:** `==` is the equality operator, which performs type coercion before comparing two values. `===` is the strict equality operator, which compares two values without type coercion. It returns `true` if the values are equal in value and type, otherwise `false`.
+
+**Question 19: What is the difference between `document.querySelector()` and `document.getElementById()`?**
+
+**Answer:** `document.querySelector()` is used to select a single element using a CSS selector, while `document.getElementById()` is used to select an element by its ID attribute. `querySelector()` returns the first matching element, while `getElementById()` directly returns the element with the specified ID.
