@@ -77,3 +77,27 @@ Welcome to our JavaScript interview questions guide! Whether you're preparing fo
 **Question 19: What is the difference between `document.querySelector()` and `document.getElementById()`?**
 
 **Answer:** `document.querySelector()` is used to select a single element using a CSS selector, while `document.getElementById()` is used to select an element by its ID attribute. `querySelector()` returns the first matching element, while `getElementById()` directly returns the element with the specified ID.
+
+**Question 20: How do you add an element to the beginning and end of an array in JavaScript?**
+
+**Answer:** You can use the `unshift()` method to add an element to the beginning of an array and the `push()` method to add an element to the end of an array.
+
+**Question 21: What is event propagation in JavaScript?**
+
+**Answer:** Event propagation in JavaScript refers to the process of an event being passed through the DOM from the root to the target element (capturing phase) and then from the target element back to the root (bubbling phase).
+
+**Question 22: What is the difference between `==` and `===` in JavaScript?**
+
+**Answer:** The `==` operator compares two values for equality after converting both values to a common type. The `===` operator (strict equality) returns true only if both the value and the type are the same for the two operands.
+
+**Question 23: How do you convert a string to a number in JavaScript?**
+
+**Answer:** You can convert a string to a number in JavaScript using the `parseInt()` or `parseFloat()` functions. `parseInt()` converts a string to an integer, while `parseFloat()` converts a string to a floating-point number.
+
+**Question 24: What is the difference between `undefined` and `null`?**
+
+**Answer:** `undefined` is a primitive value that represents the absence of a value or uninitialized variable. `null` is also a primitive value that represents the intentional absence of any object value.
+
+**Question 25: What is the difference between synchronous and asynchronous code execution?**
+
+**Answer:** Synchronous code is executed sequentially, blocking further execution until the current operation is completed. Asynchronous code allows the program to continue executing other operations while waiting for the asynchronous operation to complete.
