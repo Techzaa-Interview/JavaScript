@@ -23,7 +23,84 @@ Welcome to the JavaScript Interview Questions repository! This collection of que
 
 JavaScript is a powerful programming language that is widely used for web development. It is a versatile language that can be used for both front-end and back-end development. JavaScript is known for its flexibility and dynamic nature, making it an essential skill for any developer.
 
-Great start! Let's continue with more questions from each topic:
+Sure, here are 10 basic JavaScript interview questions with answers and examples that are typically asked to freshers:
+
+### 🚀 Introduction - Basic Questions
+
+1. **What is JavaScript?**
+   - **Answer:** JavaScript is a versatile, high-level programming language primarily used for creating interactive elements on websites. It is an interpreted language, meaning it is executed line-by-line in the browser.
+
+   - **Example:**
+     ```html
+     <script>
+       alert("Hello, World!");
+     </script>
+     ```
+
+2. **What are the main features of JavaScript?**
+   - **Answer:** JavaScript features include:
+     - Lightweight and interpreted
+     - Dynamic typing
+     - First-class functions
+     - Prototype-based object orientation
+     - Event-driven and asynchronous programming
+
+   - **Example:**
+     ```javascript
+     const message = "Hello, World!";
+     console.log(message); // Output: Hello, World!
+     ```
+
+3. **How do you include JavaScript in an HTML file?**
+   - **Answer:** JavaScript can be included in an HTML file using the `<script>` tag. This tag can be placed in the `<head>` or `<body>` section of the HTML document.
+
+   - **Example:**
+     ```html
+     <html>
+     <head>
+       <script>
+         console.log("This is JavaScript in the head section");
+       </script>
+     </head>
+     <body>
+       <script>
+         console.log("This is JavaScript in the body section");
+       </script>
+     </body>
+     </html>
+     ```
+
+4. **What is the `console.log` method used for?**
+   - **Answer:** The `console.log` method is used to print messages to the browser's console. It is commonly used for debugging purposes.
+
+   - **Example:**
+     ```javascript
+     console.log("Hello, World!"); // Output: Hello, World!
+     ```
+
+5. **What is a variable in JavaScript, and how do you declare it?**
+   - **Answer:** A variable in JavaScript is a container for storing data values. Variables are declared using the `var`, `let`, or `const` keywords.
+
+   - **Example:**
+     ```javascript
+     var name = "Alice";
+     let age = 25;
+     const city = "New York";
+     ```
+
+
+6. **How do you write a comment in JavaScript?**
+   - **Answer:** Comments in JavaScript can be single-line or multi-line. Single-line comments start with `//`, and multi-line comments are enclosed within `/*` and `*/`.
+
+   - **Example:**
+     ```javascript
+     // This is a single-line comment
+     /*
+       This is a
+       multi-line comment
+     */
+     ```
+
 
 ## Data Types
 1. How can you check if a variable is an array in JavaScript?
