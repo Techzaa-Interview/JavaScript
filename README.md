@@ -23,7 +23,6 @@ Welcome to the JavaScript Interview Questions repository! This collection of que
 
 JavaScript is a powerful programming language that is widely used for web development. It is a versatile language that can be used for both front-end and back-end development. JavaScript is known for its flexibility and dynamic nature, making it an essential skill for any developer.
 
-Sure, here are 10 basic JavaScript interview questions with answers and examples that are typically asked to freshers:
 
 ### 🚀 Introduction - Basic Questions
 
