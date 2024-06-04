@@ -234,7 +234,6 @@ JavaScript is a powerful programming language that is widely used for web develo
       inner(); // Output: Inner function
       ```
 
-Let's continue with more interview questions focusing on different topics:
 
 ## Arrays
 1. How do you iterate over an array in JavaScript?
